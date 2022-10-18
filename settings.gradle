@@ -1,9 +1,9 @@
 rootProject.name = 'medical-api'
 
-include 'madical-api-service'
-include 'personal-service'
-include 'qr-storage-service'
-include 'spring-boot-admin'
-include 'eurica'
-include 'gateway'
-include 'config'
+include ("madical-api-service")
+include("personal-service")
+include("qr-storage-service")
+include("spring-boot-admin")
+include("eurica")
+include("gateway")
+include("config")

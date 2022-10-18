@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-db
+      author: Siarhei Krotau
+      tag: db_create
+
+  - include:
+      file: v1.0.0/v1.0.0-changelog.yaml
+      relativeToChangeLogFile: true
