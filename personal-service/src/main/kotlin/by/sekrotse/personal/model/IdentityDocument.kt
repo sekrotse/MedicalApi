@@ -1,5 +1,6 @@
 package by.sekrotse.personal.model
 
+import org.hibernate.annotations.GenericGenerator
 import org.w3c.dom.DocumentType
 import java.util.*
 import javax.persistence.*
@@ -8,7 +9,8 @@ import javax.persistence.*
 @Table(name = "document")
 data class IdentityDocument(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "id", nullable = false)
     val id: UUID? = null,
     @Enumerated(EnumType.STRING)

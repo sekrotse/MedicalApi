@@ -1,5 +1,6 @@
 package by.sekrotse.personal.model
 
+import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
@@ -7,7 +8,8 @@ import javax.persistence.*
 @Table(name = "person")
 data class Person(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "id", nullable = false)
     val id: UUID? = null,
     @Column(name = "first_name", nullable = false)

@@ -21,7 +21,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_address
                   name: id
-                  type: UUID
+                  type: VARCHAR(32)
               - column:
                   constraints:
                     nullable: false
@@ -53,101 +53,86 @@ databaseChangeLog:
       author: Siarhei Krotau
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
-        - createSequence:
-            incrementBy: 1
-            sequenceName: hibernate_sequence
-            startValue: 1
-            changes:
-              - createTable:
-                  columns:
-                    - column:
-                        constraints:
-                          nullable: false
-                          primaryKey: true
-                          primaryKeyName: pk_contact
-                        name: id
-                        type: UUID
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: contact_type
-                        type: VARCHAR(50)
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: value
-                        type: VARCHAR(50)
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: person_id
-                        type: VARCHAR(32)
-                  tableName: contact
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_contact
+                  name: id
+                  type: VARCHAR(32)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: contact_type
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: value
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: person_id
+                  type: VARCHAR(32)
+            tableName: contact
   - changeSet:
       id: 1664287477843-4
       author: Siarhei Krotau
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
-        - createSequence:
-            incrementBy: 1
-            sequenceName: hibernate_sequence
-            startValue: 1
-            changes:
-              - createTable:
-                  columns:
-                    - column:
-                        constraints:
-                          nullable: false
-                          primaryKey: true
-                          primaryKeyName: pk_document
-                        name: id
-                        type: UUID
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: document_type
-                        type: VARCHAR(50)
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: document_number
-                        type: VARCHAR(50)
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: person_id
-                        type: VARCHAR(32)
-                  tableName: document
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_document
+                  name: id
+                  type: VARCHAR(32)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: document_type
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: document_number
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: person_id
+                  type: VARCHAR(32)
+            tableName: document
   - changeSet:
       id: 1664287477843-5
       author: Siarhei Krotau
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
-        - createSequence:
-            incrementBy: 1
-            sequenceName: hibernate_sequence
-            startValue: 1
-            changes:
-              - createTable:
-                  columns:
-                    - column:
-                        constraints:
-                          nullable: false
-                          primaryKey: true
-                          primaryKeyName: pk_person
-                        name: id
-                        type: UUID
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: first_name
-                        type: VARCHAR(30)
-                    - column:
-                        constraints:
-                          nullable: false
-                        name: last_name
-                        type: VARCHAR(30)
-                  tableName: person
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_person
+                  name: id
+                  type: VARCHAR(32)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(30)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_name
+                  type: VARCHAR(30)
+            tableName: person
   - changeSet:
       id: 1664287477843-6
       author: Siarhei Krotau
@@ -159,12 +144,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: person_id
-                  type: UUID
+                  type: VARCHAR(32)
               - column:
                   constraints:
                     nullable: false
                   name: address_id
-                  type: UUID
+                  type: VARCHAR(32)
             tableName: person_address
   - changeSet:
       id: 1664287477843-7
@@ -188,7 +173,7 @@ databaseChangeLog:
             constraintName: FK_DOCUMENT_ON_PERSON
             referencedColumnNames: id
             referencedTableName: person
-    - changeSet:
+  - changeSet:
       id: 1664287477843-9
       author: Siarhei Krotau
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
@@ -210,4 +195,3 @@ databaseChangeLog:
             constraintName: fk_person_address_on_person
             referencedColumnNames: id
             referencedTableName: person
-
