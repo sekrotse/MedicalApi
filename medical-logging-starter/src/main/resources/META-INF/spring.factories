@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  by.sekrotse.logging.LoggingConfiguration
+  by.sekrotse.logging.configuration.LoggingAutoConfiguration

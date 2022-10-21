@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "medical-logging.appenders",
+      "description": "Настройки аппендеров для logback."
+    },
+    {
+      "name": "medical-logging.appenders.console",
+      "description": "Настройки логирования в консоль."
+    },
+    {
+      "name": "medical-logging.appenders.file",
+      "description": "Настройки логирования в файл."
+    },
+    {
+      "name": "medical-logging.appenders.logstash",
+      "description": "Настройки логирования в Logstash."
+    }
+  ],
+  "properties": [
+    {
+      "name": "medical-logging.appenders.console.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Включение логирования в консоль.",
+      "defaultValue": "true"
+    }
+  ]
+}
